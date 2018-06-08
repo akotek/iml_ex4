@@ -11,6 +11,7 @@ Date: May, 2018
 """
 
 import numpy as np
+import pandas as pd
 
 def Q3(): # AdaBoost
     # TODO - implement this function
