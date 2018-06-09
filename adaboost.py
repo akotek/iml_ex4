@@ -32,7 +32,6 @@ class AdaBoost(object):
         """
         Train this classifier over the sample (X,y)
         """
-
         # D is vector of distributions over the SAMPLE
         m = np.size(X)
         D = np.full(shape=m, fill_value=1 / m)  # init d'i...d'm as uniform dist
@@ -76,6 +75,7 @@ def main():
     X_val, y_val = read_from_txt(path + "X_val.txt", path + "y_val.txt")
     X_test, y_test = read_from_txt(path + "X_test.txt", path + "y_test.txt")
 
+    # -------- First part --------
     T = np.arange(0, 105, step=5)
     T = np.append(T, np.array(200))
 
@@ -91,15 +91,15 @@ def main():
     # adaboost.train(X_train, y_train)
     # training_err[t] = adaboost.error(X_test, y_test)
     # validation_err[t] = adaboost.error(X_val, y_val)
-    # test_err ?
 
     # plt.plot(T, training_err, label="train error")
     # plt.plot(T, validation_err, label="validation error")
     # plt.legend()
     # plt.show()
+    # ------------------------
+
+    # -------- Second part --------
+    decision_T = [1, 5, 10, 100, 200]
 
 
-# D is a vector of m weights
-# for the samples, X\ in {R ^ {m, d}} and y is a vector of +1 and -1s of
-# size m, (similar to what we described as the weak learner in adaboost)
 if __name__ == '__main__': main()
